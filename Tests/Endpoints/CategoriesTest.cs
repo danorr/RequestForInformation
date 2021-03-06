@@ -17,7 +17,8 @@ namespace Tests
         public async void GetDetailsVerifyNameCanRelistPromotions()
         {
             // Act
-            var baseUrl = "https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false";
+            var baseUrl = "https://api.tmsandbox.co.nz/v1/";
+            var requestUrl = $"{baseUrl}Categories/6327/Details.json?catalogue=false";
             var response = await client.GetAsync(baseUrl);
 
             if (!response.IsSuccessStatusCode)
@@ -38,7 +39,6 @@ namespace Tests
             string expectedName = "Carbon credits";
             string expectedDescription = "2x larger image";
             bool expectedCanRelist = true;
-            // The Promotions element with Name = "Gallery" has a Description that contains the text "2x larger image"
 
             // Assert
             Assert.Equal(name, expectedName);
