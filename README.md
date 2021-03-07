@@ -10,7 +10,7 @@ You need to have [.NET 5](https://dotnet.microsoft.com/download/dotnet/5.0) or g
 git clone https://github.com/danorr/RequestForInformation.git
 ```
 
-2. Install dependecies
+2. Install dependencies
 ``` shell
 cd RequestForInformation/Tests
 dotnet restore
