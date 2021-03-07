@@ -23,7 +23,7 @@ namespace Tests
 
             if (!response.IsSuccessStatusCode)
             {
-                Assert.True(false, "Request was not successful.");
+                Assert.True(false, $"Request was not successful. {response.ReasonPhrase}");
             }
             // Arrange
             var body = await response.Content.ReadAsStringAsync();
