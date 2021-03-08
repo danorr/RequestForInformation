@@ -44,7 +44,7 @@ namespace IntegrationTests
         {
             var expectedDescription = "2x larger image";
 
-            // Act
+            // Arrange
             var promoDescription = from promotion in fixture.category.Promotions
                                    where promotion.Name == "Gallery"
                                    select promotion.Description;
