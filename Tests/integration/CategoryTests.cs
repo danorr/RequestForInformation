@@ -12,8 +12,6 @@ namespace IntegrationTests
 {
     public class CategoryTests : IClassFixture<RequestFixture>
     {
-        // private readonly HttpClient client;
-        // public string requestUrl = "https://api.tmsandbox.co.nz/v1/Categories/6327/Details.json?catalogue=false";
         private RequestFixture fixture;
         public CategoryTests(RequestFixture fixture)
         {
