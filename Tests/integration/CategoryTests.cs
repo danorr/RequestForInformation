@@ -22,11 +22,11 @@ namespace IntegrationTests
         public void GetDetailsAndVerifyName()
         {
             // Arrange
-            var name = fixture.category.Name;
+            var categoryName = fixture.category.Name;
             var expectedName = "Carbon credits";
 
             // Assert
-            Assert.Equal(name, expectedName);
+            Assert.Equal(categoryName, expectedName);
         }
 
         [Fact]
@@ -42,16 +42,16 @@ namespace IntegrationTests
         [Fact]
         public void GetDetailsAndVerifyDescription()
         {
-            var expectedDescription = "2x larger image";
+            var expectedDescription = "Good position in category";
 
             // Arrange
-            var promoDescription = from promotion in fixture.category.Promotions
-                                   where promotion.Name == "Gallery"
-                                   select promotion.Description;
-            var hasDescription = promoDescription.Contains(expectedDescription);
+            var promoDescription = fixture.category.Promotions
+                .Where(p => p.Name == "Gallery")
+                .FirstOrDefault()
+                .Description;
 
             // Assert
-            Assert.False(hasDescription);
+            Assert.Equal(expectedDescription, promoDescription);
         }
 
     }
