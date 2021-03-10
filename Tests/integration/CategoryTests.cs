@@ -22,8 +22,8 @@ namespace IntegrationTests
         public void GetDetailsAndVerifyName()
         {
             // Arrange
-            var categoryName = fixture.category.Name;
             var expectedName = "Carbon credits";
+            var categoryName = fixture.category.Name;
 
             // Assert
             Assert.Equal(categoryName, expectedName);
@@ -42,9 +42,8 @@ namespace IntegrationTests
         [Fact]
         public void GetDetailsAndVerifyDescription()
         {
-            var expectedDescription = "Good position in category";
-
             // Arrange
+            var expectedDescription = "Good position in category";
             var promoDescription = fixture.category.Promotions
                 .Where(p => p.Name == "Gallery")
                 .FirstOrDefault()
